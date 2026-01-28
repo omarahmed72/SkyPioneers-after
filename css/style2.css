@@ -1,0 +1,908 @@
+/* --- إعدادات عامة ومتغيرات --- */
+:root {
+  --primary-blue: #00a8ff;
+  --icon-color: #ffffff;
+  --text-main: #ffffff;
+  --text-sub: #dddddd;
+  --text-dark: #1a3c5a;
+  --radius: 16px;
+  --text-gray: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffae3;
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+.service-text {
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================================
+         1. Navbar (شفاف تماماً)
+       ========================================= */
+
+.navbar {
+  height: 52px;
+  padding-bottom: 0;
+  flex-direction: column;
+  z-index: 1000;
+  /* الخلفية الزجاجية */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.08)
+  );
+  backdrop-filter: blur(5px) brightness(0.9);
+  -webkit-backdrop-filter: blur(5px) brightness(0.9);
+}
+
+.nav-content {
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  gap: 230px;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.brand-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .nav_logo {
+  width: 110px;
+}
+
+@media (min-width: 996px) {
+  .container-fluid {
+    gap: 250px;
+  }
+}
+
+.navbar-toggler .fa-bars {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+}
+
+.navbar-collapse {
+  justify-content: space-between !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-expand-lg .navbar-collapse {
+    gap: 1rem !important;
+  }
+}
+
+.navbar-expand-lg .navbar-nav {
+  display: flex;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+  color: #fff;
+  width: 5vw;
+  text-align: center;
+  border: 1px solid #ffffff47;
+  border-radius: 20px;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background: radial-gradient(
+    circle at 30% -35%,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.35) 25%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.02) 65%
+  );
+  backdrop-filter: blur(10px);
+  background-position: 20% 20%;
+}
+
+@media (max-width: 900px) {
+  .navbar .nav_logo {
+    position: relative;
+    left: 25px;
+  }
+  .navbar-nav .nav-link,
+  .navbar-nav .nav-link.active,
+  .icon-btn {
+    color: #3283c8;
+  }
+}
+
+/* =========================================
+   Tesla Full-Width Dropdown (FIXED & STYLED)
+   ========================================= */
+
+/* 1. ضبط العنصر الأب ليكون مرجعاً للجسر */
+.tesla-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative; /* مهم جداً */
+}
+
+/* 2. الجسر الشفاف (لمنع اختفاء القائمة) */
+.tesla-item::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  z-index: 1001;
+}
+
+/* 3. تنسيق القائمة */
+.tesla-dropdown {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  padding: 40px 0;
+
+  /* الخلفية: مطابقة للنافبار تماماً */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    /* زدت الشفافية قليلاً هنا لتكون النصوص واضحة */ rgba(255, 255, 255, 0.6)
+  );
+  backdrop-filter: blur(15px) brightness(1.1);
+  -webkit-backdrop-filter: blur(15px) brightness(1.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* الحركة */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-15px);
+  transition:
+    all 0.3s ease,
+    visibility 0s linear 0.1s;
+  z-index: 999;
+}
+
+/* 4. ظهور القائمة عند الهوفر */
+.tesla-item:hover .tesla-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+/* محتويات القائمة */
+.tesla-dropdown h5 {
+  font-size: 14px;
+  color: var(--text-dark); /* أزرق داكن */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.tesla-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tesla-list li {
+  margin-bottom: 8px;
+}
+
+.tesla-list li a {
+  color: #333; /* رمادي غامق للنصوص */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.tesla-list li a:hover {
+  color: var(--primary-blue);
+  padding-left: 5px;
+}
+
+/* صورة العرض داخل القائمة */
+.menu-promo {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 150px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.menu-promo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.menu-promo span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+}
+
+/* ------------------------------------------------ */
+
+/* Backdrop Overlay */
+.tesla-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* تفعيل الـ Overlay عند الوقوف على زر Explore */
+body:has(.tesla-item:hover) .tesla-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Navbar Icons */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  color: #fff;
+  width: 2.3vw;
+  text-align: center;
+  border: 1px solid #ffffff47;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.icon-btn:hover {
+  backdrop-filter: blur(10px) brightness(0.6);
+}
+
+@media (max-width: 991px) {
+  .nav-content {
+    padding: 0 15px 15px 15px;
+  }
+}
+
+/* =========================================
+         2. Hero & Sections
+       ========================================= */
+
+#contain {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex: 1;
+}
+
+.hero-section {
+  position: relative;
+  margin-top: 15rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+}
+
+.hero-bg-image,
+.overlay {
+  display: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards 0.5s;
+}
+.hero-content h1 {
+  color: #0b0829;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.hero-content p {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Services */
+.services-section {
+  padding: 80px 8%;
+  position: relative;
+  z-index: 5;
+}
+
+.services-section .section-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  border: 1px solid #e0e0e0;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-icon {
+  font-size: 30px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  transition: transform 0.4s;
+}
+
+.service-text {
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.service-card:hover {
+  border-color: var(--text-dark);
+  transform: translateY(-10px) scale(1.05) !important;
+  box-shadow: 0 15px 30px rgba(11, 74, 125, 0.15);
+}
+.service-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  backdrop-filter: blur(10px);
+}
+
+/* Developers */
+.top-compounds-section {
+  padding: 40px 8%;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+}
+
+.dev-card {
+  background: transparent;
+  backdrop-filter: blur(5px);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dev-img-holder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev-img-holder img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  border-radius: 45px;
+}
+
+.dev-card:hover {
+  transform: translateY(-5px);
+}
+
+.dev-card:hover .dev-img-holder img {
+  transform: scale(1.1);
+}
+
+/* Compounds */
+.compound-card {
+  position: relative;
+  height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.compound-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.compound-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+  z-index: 2;
+}
+
+.compound-overlay h3 {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.compound-overlay p {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.compound-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.compound-card:hover .img-wrapper img {
+  transform: scale(1.15);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+.custom-nav-btn {
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+}
+.custom-nav-btn:hover {
+  background: var(--primary-blue);
+}
+
+/* Banners */
+.banners-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promo-banner {
+  position: relative;
+  padding: 30px 40px;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.nawy-now-banner {
+  background: linear-gradient(to right, #fff4ed 60%, #f9d7c6 100%);
+  color: #b94a22;
+}
+.nawy-now-banner h2 {
+  font-size: 2.2rem;
+  color: #d35400;
+}
+
+.sell-property-banner {
+  background: linear-gradient(to right, #f0f4f7 60%, #d6e0e7 100%);
+  color: #1c3c5a;
+}
+.sell-property-banner h2 {
+  font-size: 2.2rem;
+  color: #1c3c5a;
+}
+
+.learn-more-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.promo-banner:hover {
+  transform: scale(1.08) translateY(-10px);
+  z-index: 10;
+}
+
+/* Recommended Properties */
+.recommended-section {
+  padding: 60px 8%;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+}
+
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.prop-card {
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s;
+  border: 1px solid #eee;
+}
+
+.prop-img-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.prop-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.top-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 35px;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.action-btn:hover {
+  background: var(--primary-blue);
+}
+
+.tooltip {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: var(--primary-blue);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  transform: translateY(-10px);
+}
+.home-btn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delivery-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  text-align: right;
+  color: white;
+}
+
+.prop-content {
+  padding: 20px;
+}
+
+.developer-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.developer-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: black;
+}
+.prop-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.prop-specs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+.spec-item {
+  font-size: 13px;
+  color: #555;
+}
+
+.prop-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #d9534f;
+}
+
+.contact-btns {
+  display: flex;
+  gap: 10px;
+}
+.call-btn,
+.whatsapp-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+.call-btn {
+  background-color: #0056b3;
+}
+.whatsapp-btn {
+  background-color: #25d366;
+}
+
+.prop-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.prop-card:hover .prop-img-wrapper img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .recommended-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+         Tesla Footer & Bottom Bar
+       ========================================= */
+
+.tesla-footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 25px 0 80px 0;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.tesla-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tesla-footer-links li {
+  font-size: 12px;
+  font-weight: 500;
+  color: #e2e2e2;
+}
+
+.tesla-footer-links li a {
+  color: #e2e2e2;
+  text-decoration: none;
+}
+.tesla-footer-links li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-right: 15px;
+  color: #fff !important;
+}
+
+/* Bottom Bar */
+.tesla-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #fffaea;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px 20px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tesla-chat-input {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.tesla-chat-input .chat-icon {
+  color: #5c5e62;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.tesla-chat-input input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex-grow: 1;
+  font-size: 14px;
+  color: #171a20;
+  padding: 10px 0;
+}
+
+.tesla-chat-input .send-btn {
+  background-color: #e2e2e2;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .tesla-bottom-bar {
+    padding: 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tesla-chat-input {
+    width: 100%;
+  }
+}

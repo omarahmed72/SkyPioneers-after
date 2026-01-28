@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Pioneers Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="imgs/title-logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* --- General Setup --- */
+      /* :root {
+        --primary-red: #c01525;
+        --dark-text: #222;
+        --gray-text: #555;
+        --light-bg: #fff5f5;
+        --border-color: #e0e0e0;
+      } */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fff;
+        overflow-x: hidden;
+        color: var(--dark-text);
+      }
+      p{
+        color: #fff;
+      }
+
+      /* حاوية السكاشن العامة */
+      section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      /* تنسيقات النصوص العامة */
+      .section-title {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        color: #fff;
+      }
+      .text-red {
+        color: #c5a059;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #c5a059;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .description {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #fff;
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      .btn-main {
+        background-color: var(--primary-red);
+        color: #fff;
+        padding: 14px 35px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 4px;
+      }
+      .btn-main:hover {
+        background-color: #063e60;
+        transform: translateY(-3px);
+      }
+
+      /* --- SECTION 1: ABOUT US --- */
+      .container-about {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .about-image {
+        flex: 1;
+        min-width: 320px;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .about-image img {
+        width: 100%;
+        display: block;
+      }
+      .about-text {
+        flex: 1;
+        min-width: 320px;
+      }
+      .breadcrumbs {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      /* --- SECTION 2: LEADERSHIP --- */
+      .leadership-container {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .leader-text-col {
+        flex: 1.2;
+        min-width: 300px;
+      }
+      .leader-img-col {
+        flex: 0.8;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile-wrapper {
+        position: relative;
+        width: 320px;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .red-frame-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 15px solid var(--primary-red);
+        border-radius: 4px 40px 4px 40px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .gray-circle-border {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        border: 6px solid #9ca3af;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      .profile-pic {
+        width: 82%;
+        height: 82%;
+        border-radius: 50%;
+        object-fit: cover;
+        z-index: 3;
+        border: 5px solid #fff;
+        filter: grayscale(100%);
+        transition: 0.3s;
+      }
+      .profile-wrapper:hover .profile-pic {
+        filter: grayscale(0%);
+      }
+      .leader-name h2 {
+        color: #c5a059;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .leader-name span {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        text-align: center;
+      }
+
+      /* --- SECTION 3: WHY CHOOSE Sky --- */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 60px;
+        row-gap: 40px;
+        margin-top: 40px;
+      }
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        perspective: 1000px;
+      }
+      .outline-num {
+        font-family: "Poppins", sans-serif;
+        font-size: 50px;
+        line-height: 1;
+        font-weight: 800;
+        color: #c5a059;
+        -webkit-text-stroke: 1.5px var(--primary-red);
+        min-width: 60px;
+      }
+      .feature-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #fff;
+        padding-top: 5px;
+      }
+
+      /* --- SECTION 4: TIMELINE --- */
+      .founders-list {
+        margin: 20px 0 40px 0;
+        background: #fdfdfd;
+        border-left: 4px solid var(--primary-red);
+        padding: 20px 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+      .founders-list h4 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .founders-list ul {
+        list-style: none;
+      }
+      .founders-list li {
+        margin-bottom: 5px;
+        color: var(--gray-text);
+        font-size: 14px;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 2px;
+        background: #e0e0e0;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 50px;
+        padding-left: 60px;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: 11px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        background: var(--primary-red);
+        border: 4px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px var(--primary-red);
+        z-index: 2;
+      }
+      .timeline-date {
+        font-size: 16px;
+        font-weight: 700;
+        color: #c5a059;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* --- SECTION 5: CONTACT US (NEW) --- */
+      /* الحاوية تأخذ عرض كامل الصفحة لعمل الخلفية المقسمة */
+      .contact-full-wrapper {
+        width: 100%;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 600px; /* ارتفاع تقريبي */
+        margin-top: 80px;
+      }
+
+      /* الجزء الأيسر: الفورم */
+      .contact-form-side {
+        flex: 1;
+        min-width: 400px;
+        padding: 80px 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-content {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .contact-header {
+        margin-bottom: 30px;
+      }
+      .contact-header i {
+        color: var(--primary-red);
+        margin-right: 10px;
+        font-size: 28px;
+        vertical-align: middle;
+      }
+      .contact-header h2 {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: 700;
+        vertical-align: middle;
+        color: #fff;
+      }
+      .contact-subtext {
+        color: #fff;
+        margin-top: 10px;
+        font-size: 15px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        background: #fff;
+        transition: 0.3s;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary-red);
+        box-shadow: 0 0 0 3px rgba(192, 21, 37, 0.1);
+      }
+
+      textarea.form-input {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      /* حقل الهاتف */
+      .phone-input-group {
+        position: relative;
+      }
+      .flag-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+      }
+      .phone-input-group input {
+        padding-left: 45px;
+      }
+
+      /* Recaptcha Mock */
+      .recaptcha-box {
+        background: #f9f9f9;
+        border: 1px solid #d3d3d3;
+        border-radius: 4px;
+        width: fit-content;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+      .recaptcha-checkbox {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #c1c1c1;
+        border-radius: 2px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .recaptcha-label {
+        font-size: 14px;
+        color: #555;
+      }
+      .recaptcha-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+      }
+      .recaptcha-logo img {
+        width: 32px;
+        opacity: 0.7;
+      }
+      .recaptcha-logo span {
+        font-size: 10px;
+        color: #999;
+      }
+
+      .btn-full {
+        width: 100%;
+        padding: 16px;
+        border-radius: 6px;
+      }
+
+      /* الجزء الأيمن: الصورة */
+      .contact-image-side {
+        flex: 1;
+        min-width: 400px;
+        background: #eee;
+        position: relative;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .contact-image-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container-about,
+        .leadership-container,
+        .features-grid {
+          flex-direction: column;
+          grid-template-columns: 1fr;
+        }
+        .founders-list {
+          text-align: left;
+        }
+        .contact-form-side {
+          padding: 40px 20px;
+        }
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container nav-content">
+        <a class="brand-text" href="index.html">
+          <img class="logo" src="imgs/logo.png" alt="" />
+        </a>
+
+        <button
+          class="navbar-toggler border-0 text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center mt-5 mt-lg-0"
+          id="mainMenu"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Rent</a>
+            </li>
+            <li class="nav-item"><a class="nav-link mx-2" href="blog.html">Blog</a></li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="d-lg-none mt-4 text-center">
+            <a href="#" class="icon-btn mx-2"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-btn mx-2"><i class="far fa-heart"></i></a>
+            <a href="#" class="icon-btn lang-btn mx-2">العربية</a>
+          </div>
+        </div>
+
+        <div class="navbar-icons d-none d-lg-flex">
+          <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
+          <a href="#" class="icon-btn lang-btn">العربية</a>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+    </nav>
+
+    <div id="contain" class="container mt-5">
+      <section class="about-section">
+        <div class="breadcrumbs">Home / About Us</div>
+        <div class="container-about">
+          <div class="about-image gs-about-img">
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
+              alt="Abstract Building"
+            />
+          </div>
+          <div class="about-text">
+            <h1 class="section-title gs-about-text">
+              About <span class="text-red">Sky</span>
+            </h1>
+            <h3 class="subtitle gs-about-text">Brief</h3>
+            <p class="description gs-about-text">
+              Sky is a respected real estate brokerage with a strong emphasis on
+              integrity, professionalism and client-centric service, resulting
+              in an excellent industry reputation. Our dedicated team of experts
+              is passionate helping clients achieve their real estate goals.
+            </p>
+            <button class="btn-main gs-about-text">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="leadership-section">
+        <div class="leadership-container">
+          <div class="leader-text-col">
+            <h1 class="section-title gs-leader-text">Leadership</h1>
+            <p class="description gs-leader-text">
+              A founder and a celebrated legend who started as a dedicated
+              engineer. Khalid boasts a track-record of successes in the
+              insurance field in two large multinationals. He moved forward as a
+              startup expert to developed the blueprint for Coldwell Banker in
+              2008. Khalid is currently spearheading the board in Sky, aiming
+              towards complete market domination.
+            </p>
+          </div>
+          <div class="leader-img-col">
+            <div class="profile-wrapper gs-leader-img-wrap">
+              <div class="red-frame-bg"></div>
+              <div class="gray-circle-border"></div>
+              <img
+                src="https://img.freepik.com/free-photo/portrait-middle-aged-businessman-suit_171337-14243.jpg?w=740"
+                alt="Khalid Bahig"
+                class="profile-pic"
+              />
+            </div>
+            <div class="leader-name gs-leader-info">
+              <h2>Khalid Bahig</h2>
+              <span>Chairman and CEO</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-choose-section">
+        <h1 class="section-title gs-why-title">
+          Why Choose <span class="text-red">Sky</span>
+        </h1>
+        <div class="features-grid">
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">01</span>
+            <p class="feature-text">
+              We uphold the highest standards of integrity and ethical conduct.
+            </p>
+          </div>
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">02</span>
+            <p class="feature-text">
+              Our clients are the center of everything we do.
+            </p>
+          </div>
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">03</span>
+            <p class="feature-text">
+              We continually expand our industry knowledge and expertise.
+            </p>
+          </div>
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">04</span>
+            <p class="feature-text">
+              We uphold the utmost professionalism in all our interactions.
+            </p>
+          </div>
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">05</span>
+            <p class="feature-text">
+              We pursue excellence in all aspects of our business.
+            </p>
+          </div>
+          <div class="feature-item gs-why-item">
+            <span class="outline-num">06</span>
+            <p class="feature-text">
+              We take responsibility for our actions and decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="brief-section">
+        <h1 class="section-title gs-brief-title">
+          Brief about the <span class="text-red">company</span>
+        </h1>
+        <div class="brief-intro gs-brief-text">
+          <p class="description">
+            Sky was built on 20 years of extensive real estate expertise in
+            Egypt’s dynamic market.
+          </p>
+          <div class="founders-list gs-brief-text">
+            <h4>Founded by:</h4>
+            <ul>
+              <li><strong>Khalid Bahig</strong>, Chairman and CEO.</li>
+              <li><strong>Mohamed Banany</strong>, Managing Director.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item gs-timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">February 2021</div>
+            <div class="timeline-content"><p>Sky integrated Zoho CRM.</p></div>
+          </div>
+          <div class="timeline-item gs-timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">March 2021</div>
+            <div class="timeline-content">
+              <p>Inaugurated "The Real Gate" Expo with over 40 developers.</p>
+            </div>
+          </div>
+          <div class="timeline-item gs-timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">June 2021</div>
+            <div class="timeline-content">
+              <p>Launched "Sky EXPO - Summer Edition".</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="contact-full-wrapper" id="contactSection">
+        <div class="contact-form-side gs-contact-left">
+          <div class="form-content">
+            <div class="contact-header">
+              <h2>
+                <i class="fas fa-phone-alt"></i> Contact
+                <span class="text-red">Us</span>
+              </h2>
+              <p class="contact-subtext">
+                Our friendly team would love to hear from you.
+              </p>
+            </div>
+
+            <form action="#">
+              <div class="form-row">
+                <div class="form-group gs-input">
+                  <label class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div class="form-group gs-input">
+                  <label class="form-label">Last name</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="Last name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group gs-input">
+                <label class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-input"
+                  placeholder="you@company.com"
+                />
+              </div>
+
+              <div class="form-group gs-input">
+                <label class="form-label">Phone number</label>
+                <div class="phone-input-group">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg"
+                    class="flag-icon"
+                    alt="Egypt"
+                  />
+                  <input
+                    type="tel"
+                    class="form-input"
+                    placeholder="+20 Enter phone number"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group gs-input">
+                <label class="form-label">Message</label>
+                <textarea
+                  class="form-input"
+                  placeholder="Leave us a message..."
+                ></textarea>
+              </div>
+
+              <div class="recaptcha-box gs-input">
+                <div class="recaptcha-checkbox"></div>
+                <span class="recaptcha-label">I'm not a robot</span>
+                <div class="recaptcha-logo">
+                  <img
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+                    alt="captcha"
+                  />
+                  <span>reCAPTCHA</span>
+                </div>
+              </div>
+
+              <button type="submit" class=" btn-search btn-full gs-input">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-image-side gs-contact-right">
+          <img
+            src="https://images.unsplash.com/photo-1485627941502-d2e6429fa2bf?q=80&w=1000&auto=format&fit=crop"
+            alt="Modern Building Red"
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="footer-overlay"></div>
+
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col brand-col">
+            <a class="brand-text" href="#">
+              <img class="logo mb-3" src="imgs/logo.png" alt="" />
+            </a>
+            <p class="tagline">
+              Boldly expanding unlimited potential to conquer the world of real
+              estate brokerage.
+            </p>
+
+            <h4 class="contact-header">CONTACT US</h4>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>USEFUL LINKS</h3>
+            <ul>
+              <li><a href="#">Explore</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>FEATURE</h3>
+            <ul>
+              <li><a href="#">Units</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>SOCIAL</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Snapchat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container bottom-row">
+          <p>Copyright 2025, All Right Reserved Sky Pioneers</p>
+          <div class="bottom-links">
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Custom Animations -->
+    <script src="js/about-animations.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // 1. Apple Scroll Zoom Logic (المعدل)
+      const heroBg = document.getElementById("heroBg");
+      const heroSection = document.querySelector(".hero-section");
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+
+        // تنفيذ الزووم فقط طالما الهيرو سيكشن ظاهر
+        if (scrollPosition <= heroHeight) {
+          // الرقم 1500 يتحكم في سرعة الزووم، كل ما زاد الرقم بقى الزووم أبطأ
+          const scaleValue = 1 + scrollPosition / 1500;
+
+          // تطبيق الزووم على ديف الصورة
+          heroBg.style.transform = `scale(${scaleValue})`;
+        }
+      });
+
+      // 2. Swiper Initialization
+      var launchesSwiper = new Swiper(".launchesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 800,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
+        },
+      });
+
+      // 3. Scroll Reveal Animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(
+          ".service-card, .area-card"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                const allSiblings = Array.from(
+                  entry.target.parentNode.children
+                );
+                const index = allSiblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 100}ms`;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

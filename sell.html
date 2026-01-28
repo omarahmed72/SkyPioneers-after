@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Pioneers Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="imgs/title-logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-expand-lg mb-5">
+      <div class="container-fluid">
+        <img class="logo" src="imgs/logo.png" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse mt-4 mt-lg-0"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sky Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i
+                  class="far fa-heart"
+                  style="font-size: 20px; color: var(--text-dark)"
+                ></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">العربية</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container nav-content">
+        <a class="brand-text" href="index.html">
+          <img class="logo" src="imgs/logo.png" alt="" />
+        </a>
+
+        <button
+          class="navbar-toggler border-0 text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center mt-5 mt-lg-0"
+          id="mainMenu"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Rent</a>
+            </li>
+            <li class="nav-item"><a class="nav-link mx-2" href="blog.html">Blog</a></li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="d-lg-none mt-4 text-center">
+            <a href="#" class="icon-btn mx-2"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-btn mx-2"><i class="far fa-heart"></i></a>
+            <a href="#" class="icon-btn lang-btn mx-2">العربية</a>
+          </div>
+        </div>
+
+        <div class="navbar-icons d-none d-lg-flex">
+          <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
+          <a href="#" class="icon-btn lang-btn">العربية</a>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+    </nav>
+
+    <div id="contain" class="container">
+      <section class="sell-section mt-5">
+        <div class="section-header">
+          <div class="header-icon">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span class="sale-badge">SALE</span>
+          </div>
+          <h2 class="main-title">Sell Your Property With Us</h2>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-circle">
+              <span class="step-num">1</span>
+              <span class="step-label">Step</span>
+            </div>
+            <h4>List Your Property Details</h4>
+            <p>Add All The Information Related To Your Property</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-circle">
+              <span class="step-num">2</span>
+              <span class="step-label">Step</span>
+            </div>
+            <h4>One Of Our Agents Will Call You</h4>
+            <p>We Will Help You Find The Best Buyer</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-circle">
+              <span class="step-num">3</span>
+              <span class="step-label">Step</span>
+            </div>
+            <h4>Meet With Serious Buyers</h4>
+            <p>Final Step To Sell Your Property</p>
+          </div>
+        </div>
+
+        <div class="form-wrapper">
+          <h3>Complete The Form</h3>
+          <p class="privacy-note">
+            Your privacy is important to us. We won't publish or share your
+            information with anyone
+          </p>
+
+          <form class="property-form">
+            <div class="form-row">
+              <input type="text" placeholder="Your Name" class="form-input" />
+
+              <div class="phone-input-group">
+                <span class="flag-icon"
+                  ><img src="https://flagcdn.com/w20/eg.png" alt="Egypt Flag"
+                /></span>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <select class="form-input">
+                <option value="" disabled selected>Location</option>
+                <option value="cairo">Cairo</option>
+                <option value="giza">Giza</option>
+              </select>
+              <select class="form-input">
+                <option value="" disabled selected>Compound</option>
+                <option value="compound1">Compound A</option>
+                <option value="compound2">Compound B</option>
+              </select>
+            </div>
+
+            <div class="form-row full-width">
+              <select class="form-input">
+                <option value="" disabled selected>Property Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="commercial">Commercial</option>
+              </select>
+            </div>
+
+            <div class="form-row full-width">
+              <textarea
+                placeholder="Description"
+                class="form-input textarea"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="footer-overlay"></div>
+
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col brand-col">
+            <a class="brand-text" href="#">
+              <img class="logo mb-3" src="imgs/logo.png" alt="" />
+            </a>
+            <p class="tagline">
+              Boldly expanding unlimited potential to conquer the world of real
+              estate brokerage.
+            </p>
+
+            <h4 class="contact-header">CONTACT US</h4>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>USEFUL LINKS</h3>
+            <ul>
+              <li><a href="#">Explore</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>FEATURE</h3>
+            <ul>
+              <li><a href="#">Units</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>SOCIAL</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Snapchat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container bottom-row">
+          <p>Copyright 2025, All Right Reserved Sky Pioneers</p>
+          <div class="bottom-links">
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // 1. Apple Scroll Zoom Logic (المعدل)
+      const heroBg = document.getElementById("heroBg");
+      const heroSection = document.querySelector(".hero-section");
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+
+        // تنفيذ الزووم فقط طالما الهيرو سيكشن ظاهر
+        if (scrollPosition <= heroHeight) {
+          // الرقم 1500 يتحكم في سرعة الزووم، كل ما زاد الرقم بقى الزووم أبطأ
+          const scaleValue = 1 + scrollPosition / 1500;
+
+          // تطبيق الزووم على ديف الصورة
+          heroBg.style.transform = `scale(${scaleValue})`;
+        }
+      });
+
+      // 2. Swiper Initialization
+      var launchesSwiper = new Swiper(".launchesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 800,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
+        },
+      });
+
+      // 3. Scroll Reveal Animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(
+          ".service-card, .area-card"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                const allSiblings = Array.from(
+                  entry.target.parentNode.children
+                );
+                const index = allSiblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 100}ms`;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

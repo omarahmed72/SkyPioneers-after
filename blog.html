@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Pioneers Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="imgs/title-logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container nav-content">
+        <a class="brand-text" href="index.html">
+          <img class="logo" src="imgs/logo.png" alt="" />
+        </a>
+
+        <button
+          class="navbar-toggler border-0 text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center mt-5 mt-lg-0"
+          id="mainMenu"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Rent</a>
+            </li>
+            <li class="nav-item"><a class="nav-link mx-2" href="blog.html">Blog</a></li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="d-lg-none mt-4 text-center">
+            <a href="#" class="icon-btn mx-2"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-btn mx-2"><i class="far fa-heart"></i></a>
+            <a href="#" class="icon-btn lang-btn mx-2">العربية</a>
+          </div>
+        </div>
+
+        <div class="navbar-icons d-none d-lg-flex">
+          <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
+          <a href="#" class="icon-btn lang-btn">العربية</a>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+    </nav>
+
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide hero-slide"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=2070&auto=format&fit=crop');
+          "
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="tag">Adventure</span>
+            <h1>Conquer the wild: Exploring terrains</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="btn btn-white">Read More</button>
+          </div>
+        </div>
+
+        <div
+          class="swiper-slide hero-slide"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2070&auto=format&fit=crop');
+          "
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="tag">Camping</span>
+            <h1>Night under the stars</h1>
+            <p>Experience the beauty of nature at night.</p>
+            <button class="btn btn-white">Discover</button>
+          </div>
+        </div>
+
+        <div
+          class="swiper-slide hero-slide"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?q=80&w=2070&auto=format&fit=crop');
+          "
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="tag">Hiking</span>
+            <h1>Reach the highest peaks</h1>
+            <p>Challenge yourself with our new hiking trails.</p>
+            <button class="btn btn-white">Join Us</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="contain" class="container">
+      <section class="categories container scroll-hidden">
+        <div class="section-header">
+          <h2>Article categories</h2>
+          <button class="btn btn-outline">Browse all articles</button>
+          <div style="display: flex; gap: 10px">
+            <button class="btn btn-outline cat-prev">←</button>
+            <button class="btn btn-outline cat-next">→</button>
+          </div>
+        </div>
+
+        <div class="swiper cat-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Travel</h3>
+                <p>Discover new places.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card travel">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Travel</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Adventure</h3>
+                <p>Seek the thrill.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card adventure">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Adventure</h3>
+                  <p>Sit facilisi vitae varius amet posuere.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Gear</h3>
+                <p>Best equipment reviews.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card gear">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Gear</h3>
+                  <p>Imperdiet tellus tempor bibendum accumsan.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Camping</h3>
+                <p>Stay in the wild.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card adventure">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Adventure</h3>
+                  <p>Sit facilisi vitae varius amet posuere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Travel</h3>
+                <p>Discover new places.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card travel">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Travel</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Adventure</h3>
+                <p>Seek the thrill.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card adventure">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Adventure</h3>
+                  <p>Sit facilisi vitae varius amet posuere.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <!-- <div
+              class="cat-card"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=500');
+              "
+            >
+              <div class="arrow-icon">↗</div>
+              <div class="cat-card-content">
+                <h3>Gear</h3>
+                <p>Best equipment reviews.</p>
+              </div>
+            </div> -->
+
+              <div class="cat-card gear">
+                <div class="arrow-icon">↗</div>
+                <div class="cat-card-content">
+                  <h3>Gear</h3>
+                  <p>Imperdiet tellus tempor bibendum accumsan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="footer-overlay"></div>
+
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col brand-col">
+            <a class="brand-text" href="#">
+              <img class="logo mb-3" src="imgs/logo.png" alt="" />
+            </a>
+            <p class="tagline">
+              Boldly expanding unlimited potential to conquer the world of real
+              estate brokerage.
+            </p>
+
+            <h4 class="contact-header">CONTACT US</h4>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>USEFUL LINKS</h3>
+            <ul>
+              <li><a href="#">Explore</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>FEATURE</h3>
+            <ul>
+              <li><a href="#">Units</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>SOCIAL</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Snapchat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container bottom-row">
+          <p>Copyright 2025, All Right Reserved Sky Pioneers</p>
+          <div class="bottom-links">
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // 1. Apple Scroll Zoom Logic (المعدل)
+      const heroBg = document.getElementById("heroBg");
+      const heroSection = document.querySelector(".hero-section");
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+
+        // تنفيذ الزووم فقط طالما الهيرو سيكشن ظاهر
+        if (scrollPosition <= heroHeight) {
+          // الرقم 1500 يتحكم في سرعة الزووم، كل ما زاد الرقم بقى الزووم أبطأ
+          const scaleValue = 1 + scrollPosition / 1500;
+
+          // تطبيق الزووم على ديف الصورة
+          heroBg.style.transform = `scale(${scaleValue})`;
+        }
+      });
+
+      // 2. Swiper Initialization
+      var launchesSwiper = new Swiper(".launchesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 800,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
+        },
+      });
+
+      // 3. Scroll Reveal Animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(
+          ".service-card, .area-card"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                const allSiblings = Array.from(
+                  entry.target.parentNode.children
+                );
+                const index = allSiblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 100}ms`;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Pioneers Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="imgs/title-logo.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container nav-content">
+        <a class="brand-text" href="index.html">
+          <img class="logo" src="imgs/logo.png" alt="" />
+        </a>
+
+        <button
+          class="navbar-toggler border-0 text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center mt-5 mt-lg-0"
+          id="mainMenu"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Rent</a>
+            </li>
+            <li class="nav-item"><a class="nav-link mx-2" href="blog.html">Blog</a></li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">About</a>
+            </li>
+          </ul>
+
+          <div class="d-lg-none mt-4 text-center">
+            <a href="#" class="icon-btn mx-2"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-btn mx-2"><i class="far fa-heart"></i></a>
+            <a href="#" class="icon-btn lang-btn mx-2">العربية</a>
+          </div>
+        </div>
+
+        <div class="navbar-icons d-none d-lg-flex">
+          <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-btn"><i class="far fa-heart"></i></a>
+          <a href="#" class="icon-btn lang-btn">العربية</a>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+    </nav>
+    <section class="explore-section">
+      <div class="explore-content">
+        <h1 class="explore-title">Explore</h1>
+        <h3 class="explore-subtitle">Explore</h3>
+      </div>
+    </section>
+    <div id="contain" class="container">
+      <div class="listing-container mt-5">
+        <aside class="filters-sidebar">
+          <h2>Filters</h2>
+
+          <div class="filter-group">
+            <label class="filter-title">Unit Types</label>
+            <input
+              type="text"
+              class="filter-search-input"
+              placeholder="Search by unit type"
+            />
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Townhouse middle</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Standalone</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Apartment</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Duplex</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Penthouse</label
+            >
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Number of rooms</label>
+            <div class="rooms-selector">
+              <button class="room-btn">1</button>
+              <button class="room-btn">2</button>
+              <button class="room-btn active">3</button>
+              <button class="room-btn">4</button>
+              <button class="room-btn">5+</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Price Range</label>
+            <div class="price-inputs">
+              <input type="text" value="100,000" />
+              <input type="text" value="50,000,000" />
+            </div>
+            <input type="range" class="price-slider" />
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Locations</label>
+            <input
+              type="text"
+              class="filter-search-input"
+              placeholder="Search by location"
+            />
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Ras sedr</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> 6th of october</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> El Mokattam</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Sheikh zayed city</label
+            >
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-title">Projects</label>
+            <input
+              type="text"
+              class="filter-search-input"
+              placeholder="Search by project"
+            />
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Telal</label
+            >
+            <label class="checkbox-label"
+              ><input type="checkbox" /> Sarai</label
+            >
+          </div>
+        </aside>
+
+        <section class="cards-grid">
+          <div class="property-card">
+            <div class="card-image-header">
+              <img src="imgs/plags.webp" class="bg-img" alt="Project Image" />
+              <div class="wave-overlay"></div>
+              <div class="developer-logo">
+                <img src="imgs/plags.webp" alt="Developer Logo" />
+              </div>
+            </div>
+            <div class="card-content">
+              <span class="location-tag">NORTH COAST</span>
+              <h3 class="property-title">Chalet - Plage</h3>
+              <div class="property-price">ECP 17,980,950</div>
+              <div class="property-details">
+                <span class="detail-item"
+                  ><i class="fas fa-bed"></i> Beds: 3</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-vector-square"></i> Area: 155</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-building"></i> Chalet</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="card-image-header">
+              <img
+                src="imgs/the_view.webp"
+                class="bg-img"
+                alt="Project Image"
+              />
+              <div class="wave-overlay"></div>
+              <div class="developer-logo">
+                <img src="imgs/the_view.webp" alt="Developer Logo" />
+              </div>
+            </div>
+            <div class="card-content">
+              <span class="location-tag">NEW CAIRO</span>
+              <h3 class="property-title">Townhouse middle - Sarai</h3>
+              <div class="property-price">ECP 14,205,414</div>
+              <div class="property-details">
+                <span class="detail-item"
+                  ><i class="fas fa-bed"></i> Beds: 3</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-vector-square"></i> Area: 160</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-building"></i> Townhouse</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="card-image-header">
+              <img src="imgs/sarai.webp" class="bg-img" alt="Project Image" />
+              <div class="wave-overlay"></div>
+              <div class="developer-logo">
+                <img src="imgs/sarai.webp" class="bg-img" alt="Project Image" />
+              </div>
+            </div>
+            <div class="card-content">
+              <span class="location-tag">NEW CAIRO</span>
+              <h3 class="property-title">Apartment - The View Waterway</h3>
+              <div class="property-price">ECP 25,857,000</div>
+              <div class="property-details">
+                <span class="detail-item"
+                  ><i class="fas fa-bed"></i> Beds: 2</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-vector-square"></i> Area: 160</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-building"></i> Apartment</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="card-image-header">
+              <img src="imgs/Jefaira.webp" class="bg-img" alt="Project Image" />
+              <div class="wave-overlay"></div>
+              <div class="developer-logo">
+                <img src="imgs/Jefaira.webp" alt="Developer Logo" />
+              </div>
+            </div>
+            <div class="card-content">
+              <span class="location-tag">NORTH COAST</span>
+              <h3 class="property-title">Chalet - Jefaira</h3>
+              <div class="property-price">ECP 12,900,000</div>
+              <div class="property-details">
+                <span class="detail-item"
+                  ><i class="fas fa-bed"></i> Beds: 2</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-vector-square"></i> Area: 91</span
+                >
+                <span class="detail-item"
+                  ><i class="fas fa-building"></i> Chalet</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="footer mt-5">
+      <div class="footer-overlay"></div>
+
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col brand-col">
+            <a class="brand-text" href="#">
+              <img class="logo mb-3" src="imgs/logo.png" alt="" />
+            </a>
+            <p class="tagline">
+              Boldly expanding unlimited potential to conquer the world of real
+              estate brokerage.
+            </p>
+
+            <h4 class="contact-header">CONTACT US</h4>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>USEFUL LINKS</h3>
+            <ul>
+              <li><a href="#">Explore</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>FEATURE</h3>
+            <ul>
+              <li><a href="#">Units</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="#">Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>SOCIAL</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tiktok</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Snapchat</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container bottom-row">
+          <p>Copyright 2025, All Right Reserved Sky Pioneers</p>
+          <div class="bottom-links">
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // 1. Apple Scroll Zoom Logic (المعدل)
+      const heroBg = document.getElementById("heroBg");
+      const heroSection = document.querySelector(".hero-section");
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+
+        // تنفيذ الزووم فقط طالما الهيرو سيكشن ظاهر
+        if (scrollPosition <= heroHeight) {
+          // الرقم 1500 يتحكم في سرعة الزووم، كل ما زاد الرقم بقى الزووم أبطأ
+          const scaleValue = 1 + scrollPosition / 1500;
+
+          // تطبيق الزووم على ديف الصورة
+          heroBg.style.transform = `scale(${scaleValue})`;
+        }
+      });
+
+      // 2. Swiper Initialization
+      var launchesSwiper = new Swiper(".launchesSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 800,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
+        },
+      });
+
+      // 3. Scroll Reveal Animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const revealElements = document.querySelectorAll(
+          ".service-card, .area-card"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                const allSiblings = Array.from(
+                  entry.target.parentNode.children
+                );
+                const index = allSiblings.indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 100}ms`;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
